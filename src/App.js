@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import movieData from './mock-movie-data'
+import Navbar from './Navbar';
 
 class App extends Component {
   constructor() {
@@ -13,7 +14,7 @@ class App extends Component {
   render() {
     console.log(this.state.movies)
     return (
-      <h2>Michael</h2>
+      <Navbar />
     )
   }
 }
