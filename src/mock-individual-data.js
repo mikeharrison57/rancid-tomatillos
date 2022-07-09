@@ -17,5 +17,5 @@ export default {
         runtime: 115,
         tagline: "",
         average_rating: 5.1
-        }
+    }
 }

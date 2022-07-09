@@ -1,6 +1,5 @@
 import './App.css';
 import React, { Component } from 'react';
-import movieData from './mock-movie-data'
 import Navbar from './Navbar';
 import MovieContainer from './MovieContainer';
 import IndividualMovie from './IndividualMovie';
@@ -17,26 +16,19 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    this.setState({
-      movies: movieData.movies
-    })
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(res => res.json())
+      .then(data => this.setState({movies: data.movies}))
   }
 
   handleClick = (id) => {
-    console.log(id)
     this.setState({  
       movieSelected: true,
       individualMovie: movie.movie
    })
   }
 
-  // findIndividualMovie = () => {
-  //   this.state.movies
-  // }
-
   render() {
-    console.log(this.state.movies)
-    console.log(movie.movie)
     return (
       <div>
         <Navbar />
