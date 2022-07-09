@@ -3,7 +3,9 @@ import MovieCard from './MovieCard'
 import './MovieContainer.css';
 
 const MovieContainer = (props) => {
-  const { movies } = props;
+  console.log(props);
+  const { movies, handleClick } = props;
+
   const movieCards = movies.map((movie) => {
     return (
       <MovieCard 
@@ -13,6 +15,7 @@ const MovieContainer = (props) => {
         title={movie.title} 
         averageRating={movie.average_rating}
         releaseDate={movie.release_date}
+        handleClick={handleClick}
       />
     )
   })
