@@ -1,9 +1,10 @@
 import React from 'react';
 import MovieCard from './MovieCard'
+import './MovieContainer.css';
 
 const MovieContainer = (props) => {
   const { movies } = props;
-  const movieCards = movies[0].map((movie) => {
+  const movieCards = movies.map((movie) => {
     return (
       <MovieCard 
         id={movie.id}

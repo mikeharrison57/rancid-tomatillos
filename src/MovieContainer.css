@@ -1,5 +1,6 @@
 .MovieContainer {
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit);
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minMax(300px, 1fr));
+  padding-left: 20px;
 }

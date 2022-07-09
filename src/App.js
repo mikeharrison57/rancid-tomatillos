@@ -8,8 +8,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: [movieData.movies]
+      movies: []
     }
+  }
+
+  componentDidMount = () => {
+    this.setState({
+      movies: movieData.movies
+    })
   }
 
   render() {
