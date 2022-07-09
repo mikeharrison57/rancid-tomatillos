@@ -4,6 +4,7 @@ import movieData from './mock-movie-data'
 import Navbar from './Navbar';
 import MovieContainer from './MovieContainer';
 import IndividualMovie from './IndividualMovie';
+import movie from './mock-individual-data';
 
 class App extends Component {
   constructor() {
@@ -24,8 +25,9 @@ class App extends Component {
   handleClick = (id) => {
     console.log(id)
     this.setState({  
-      movieSelected: id
-    })
+      movieSelected: true,
+      individualMovie: movie
+   })
   }
 
   // findIndividualMovie = () => {
@@ -37,10 +39,15 @@ class App extends Component {
     return (
       <div>
         <Navbar />
+        {this.state.movieSelected ?
+        <IndividualMovie movie={this.state.individualMovie} />
+        :
         <MovieContainer 
         movies={this.state.movies} 
         handleClick={this.handleClick}
+        
         /> 
+        }
       </div>
     )
   }
