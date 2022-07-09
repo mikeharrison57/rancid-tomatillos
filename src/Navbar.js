@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <header>
       <h1>Rancid Tomatillos</h1>
-      <button>HOME</button>
+      <button onClick={() => window.location.reload()}>HOME</button>
     </header>
   )
 }

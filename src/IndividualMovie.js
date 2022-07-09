@@ -10,6 +10,15 @@ const IndividualMovie = (props) => {
             <p>{id}</p>
             <p>{title}</p>
             <img src={poster_path}></img>
+            <img src={backdrop_path}></img>
+            <p>{release_date}</p>
+            <p>{overview}</p>
+            <p>{average_rating}</p>
+            <p>{genres}</p>
+            <p>{budget}</p>
+            <p>{revenue}</p>
+            <p>{runtime}</p>
+            <p>{tagline}</p>
         </div>
     )
 

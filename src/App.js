@@ -26,7 +26,7 @@ class App extends Component {
     console.log(id)
     this.setState({  
       movieSelected: true,
-      individualMovie: movie
+      individualMovie: movie.movie
    })
   }
 
@@ -36,6 +36,7 @@ class App extends Component {
 
   render() {
     console.log(this.state.movies)
+    console.log(movie.movie)
     return (
       <div>
         <Navbar />
