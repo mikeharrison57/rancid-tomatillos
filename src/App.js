@@ -22,10 +22,9 @@ class App extends Component {
   }
 
   handleClick = (id) => {
-    this.setState({  
-      movieSelected: true,
-      individualMovie: movie.movie
-   })
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+      .then(res => res.json())
+      .then(data => this.setState({movieSelected: true,  individualMovie:data.movie}))
   }
 
   render() {
