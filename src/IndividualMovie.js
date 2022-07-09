@@ -1,4 +1,5 @@
 import React from 'react';
+import './IndividualMovie.css'
 
 const IndividualMovie = (props) => {
     const {
@@ -6,19 +7,21 @@ const IndividualMovie = (props) => {
     } = props.movie
 
     return(
-        <div>
-            <p>{id}</p>
+        <div className='IndividualMovie'>
+            {/* <p>{id}</p> */}
             <p>{title}</p>
-            <img src={poster_path}></img>
-            <img src={backdrop_path}></img>
-            <p>{release_date}</p>
-            <p>{overview}</p>
-            <p>{average_rating}</p>
-            <p>{genres}</p>
-            <p>{budget}</p>
-            <p>{revenue}</p>
-            <p>{runtime}</p>
-            <p>{tagline}</p>
+            {/* <img src={poster_path}></img> */}
+            <div className='BackgroundImage'>
+                <img src={backdrop_path}></img>
+            </div>
+            <p>Release Date: {release_date}</p>
+            <p>Overview: {overview}</p>
+            <p>Rating: {average_rating}</p>
+            <p>Genres: {genres}</p>
+            {/* <p>{budget}</p>
+            <p>{revenue}</p> */}
+            <p>Runtime: {runtime}</p>
+            <p>Tagline: {tagline}</p>
         </div>
     )
 
