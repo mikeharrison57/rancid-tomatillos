@@ -1,6 +1,10 @@
 describe('main page', () => {
-  it('should be able to visit the page and see movies', () => {
-    cy.visit('http://localhost:3000/').wait(1000)
-    cy.get('.MovieContainer').find('.MovieCard').should('have.length', 40)
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {fixture: 'movies'})
+  })
+
+    it('should be able to visit the page and see movies', () => {
+      cy.get('.MovieContainer').find('.MovieCard').should('have.length', 6)
   })
 })
