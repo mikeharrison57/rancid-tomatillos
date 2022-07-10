@@ -49,7 +49,7 @@ class App extends Component {
       <div>
         <Navbar />
         {this.state.error ?
-        <h1>{this.state.error}</h1> 
+        <h1 className='Error'>{this.state.error}</h1> 
         :
         this.state.movieSelected ?
         <IndividualMovie movie={this.state.individualMovie} />
