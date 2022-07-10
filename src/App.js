@@ -31,8 +31,16 @@ class App extends Component {
 
   handleClick = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(res => res.json())
+    .then(res => {
+      if (res.ok) {
+        return res.json()
+      }
+      throw Error(res.statusText)
+      })
       .then(data => this.setState({movieSelected: true,  individualMovie:data.movie}))
+      .catch(error => {
+        this.setState({error: error.message})
+      })
   }
 
   render() {
@@ -41,7 +49,7 @@ class App extends Component {
       <div>
         <Navbar />
         {this.state.error ?
-        <h1>404 {this.state.error}</h1> 
+        <h1>{this.state.error}</h1> 
         :
         this.state.movieSelected ?
         <IndividualMovie movie={this.state.individualMovie} />
