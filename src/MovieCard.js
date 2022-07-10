@@ -4,7 +4,7 @@ import './MovieCard.css'
 const MovieCard = (props) => {
   const { id, handleClick } = props
   return (
-    <div>
+    <div className='MovieCard'>
       <img 
         src={props.moviePoster} 
         alt='moviePoster'
