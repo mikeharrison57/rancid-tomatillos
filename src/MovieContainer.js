@@ -3,9 +3,7 @@ import MovieCard from './MovieCard'
 import './MovieContainer.css';
 
 const MovieContainer = (props) => {
-  console.log(props);
   const { movies, handleClick } = props;
-
   const movieCards = movies.map((movie) => {
     return (
       <MovieCard 

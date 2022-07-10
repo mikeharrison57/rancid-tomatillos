@@ -1,10 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
-import movieData from './mock-movie-data'
 import Navbar from './Navbar';
 import MovieContainer from './MovieContainer';
 import IndividualMovie from './IndividualMovie';
-import movie from './mock-individual-data';
 
 class App extends Component {
   constructor() {
@@ -12,41 +10,53 @@ class App extends Component {
     this.state = {
       movies: [],
       movieSelected: false,
+      error: '',
       individualMovie: {}
     }
   }
 
   componentDidMount = () => {
-    this.setState({
-      movies: movieData.movies
-    })
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(res => {
+        if (res.ok) {
+          return res.json()
+        }
+        throw Error(res.statusText)
+        })
+      .then(data => this.setState({movies: data.movies}))
+      .catch(error => {
+        this.setState({error: error.message})
+      })
   }
 
   handleClick = (id) => {
-    console.log(id)
-    this.setState({  
-      movieSelected: true,
-      individualMovie: movie.movie
-   })
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+    .then(res => {
+      if (res.ok) {
+        return res.json()
+      }
+      throw Error(res.statusText)
+      })
+      .then(data => this.setState({movieSelected: true,  individualMovie:data.movie}))
+      .catch(error => {
+        this.setState({error: error.message})
+      })
   }
 
-  // findIndividualMovie = () => {
-  //   this.state.movies
-  // }
-
   render() {
-    console.log(this.state.movies)
-    console.log(movie.movie)
+    console.log(this.state.error)
     return (
       <div>
         <Navbar />
-        {this.state.movieSelected ?
+        {this.state.error ?
+        <h1 className='Error'>{this.state.error}</h1> 
+        :
+        this.state.movieSelected ?
         <IndividualMovie movie={this.state.individualMovie} />
         :
         <MovieContainer 
-        movies={this.state.movies} 
-        handleClick={this.handleClick}
-        
+          movies={this.state.movies} 
+          handleClick={this.handleClick}
         /> 
         }
       </div>

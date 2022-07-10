@@ -9,7 +9,7 @@ const IndividualMovie = (props) => {
     return(
         <div className='IndividualMovie'>
             {/* <p>{id}</p> */}
-            <p>{title}</p>
+            <p className='Title'>{title}</p>
             {/* <img src={poster_path}></img> */}
             <div className='BackgroundImage'>
                 <img src={backdrop_path}></img>
