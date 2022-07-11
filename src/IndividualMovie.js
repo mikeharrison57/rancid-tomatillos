@@ -17,7 +17,7 @@ const IndividualMovie = (props) => {
             <p>Release Date: {release_date}</p>
             <p>Overview: {overview}</p>
             <p>Rating: {average_rating}</p>
-            <p>Genres: {genres}</p>
+            <p className='Genres'>Genres: {genres}</p>
             {/* <p>{budget}</p>
             <p>{revenue}</p> */}
             <p>Runtime: {runtime}</p>
