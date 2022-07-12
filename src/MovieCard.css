@@ -1,3 +1,10 @@
 img {
-  width: 300px;
+  padding: 10px;
+}
+
+.MovieCard:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all .3s;
+  opacity: .7;
 }

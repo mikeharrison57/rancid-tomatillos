@@ -1,4 +1,30 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Limelight&display=swap') */
+
 .Navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: black ;
+    color: #d90429;
+    font-size: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: -webkit-linear-gradient(grey, black);
 }
+
+.HomeButton {
+    height: 75px;
+    width: 75px;
+}
+
+.HomeButton:hover {
+    /* opacity: .7; */
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all .3s;
+    filter: brightness(120%);
+  }
+
+/* h1 {
+    font-family: 'Limelight';
+} */

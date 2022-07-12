@@ -10,7 +10,7 @@ const MovieCard = (props) => {
         alt='moviePoster'
         onClick={() => handleClick(id)}
       />
-      <h3>{props.title}</h3>
+      {/* <h3>{props.title}</h3> */}
     </div>
   )
 }
