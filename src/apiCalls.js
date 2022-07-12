@@ -18,4 +18,4 @@ const fetchIndvidualMovie = (id) => {
   }) 
 }
 
-export { fetchMovieData, fetchIndvidualMovie }
+export { fetchMovieData, fetchIndvidualMovie };
