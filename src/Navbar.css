@@ -1,4 +1,16 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Limelight&display=swap') */
+
 .Navbar {
     display: flex;
     justify-content: space-between;
+    background-color: black ;
+    color: #d90429;
+    font-size: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: -webkit-linear-gradient(grey, black);
 }
+
+/* h1 {
+    font-family: 'Limelight';
+} */
