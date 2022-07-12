@@ -3,7 +3,7 @@ import '../styles/IndividualMovie.css'
 
 const IndividualMovie = (props) => {
     const {
-        title, backdrop_path, release_date, overview, average_rating, genres, runtime, tagline 
+        id, title, backdrop_path, release_date, overview, average_rating, genres, runtime, tagline 
     } = props.movie
 
     const splitDate = release_date.split("-").shift()
