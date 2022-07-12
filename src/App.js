@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import MovieContainer from './components/MovieContainer';
 import IndividualMovie from './components/IndividualMovie';
+import { fetchMovieData, fetchIndvidualMovie } from './apiCalls';
 
 class App extends Component {
   constructor() {
@@ -16,31 +17,19 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(res => {
-        if (res.ok) {
-          return res.json()
-        }
-        throw Error(res.statusText)
-        })
+    fetchMovieData()
       .then(data => this.setState({movies: data.movies}))
       .catch(error => {
         this.setState({error: error.message})
-      })
+    })
   }
 
   handleClick = (id) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    .then(res => {
-      if (res.ok) {
-        return res.json()
-      }
-      throw Error(res.statusText)
-      })
+    fetchIndvidualMovie(id)
       .then(data => this.setState({movieSelected: true,  individualMovie:data.movie}))
       .catch(error => {
         this.setState({error: error.message})
-      })
+    })
   }
 
   render() {
