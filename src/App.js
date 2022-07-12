@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   handleClick = (id) => {
-    console.log(id)
     fetchIndvidualMovie(id)
       .then(data => this.setState({movieSelected: true,  individualMovie:data.movie}))
       .catch(error => {
@@ -50,7 +49,7 @@ class App extends Component {
             handleClick={this.handleClick}
           />}/>
         <Route exact path="/:id" render={({ match }) => {
-           <IndividualMovie movie={this.state.individualMovie} />
+           return <IndividualMovie id={match.params.id} />
           }}
         /> 
       </div>
