@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import MovieContainer from './components/MovieContainer';
 import IndividualMovie from './components/IndividualMovie';
 import { fetchMovieData, fetchIndvidualMovie } from './apiCalls';
+import { Route, Link } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -33,21 +34,19 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.error)
     return (
       <div>
         <Navbar />
-        {this.state.error ?
+        {/* {this.state.error ?
         <h1 className='Error'>{this.state.error}</h1> 
         :
         this.state.movieSelected ?
         <IndividualMovie movie={this.state.individualMovie} />
-        :
-        <MovieContainer 
+        : */}
+        <Route path='/' render={ () => <MovieContainer 
           movies={this.state.movies} 
           handleClick={this.handleClick}
-        /> 
-        }
+        />  } />
       </div>
     )
   }
