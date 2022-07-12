@@ -1,8 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import MovieContainer from './MovieContainer';
-import IndividualMovie from './IndividualMovie';
+import Navbar from './components/Navbar';
+import MovieContainer from './components/MovieContainer';
+import IndividualMovie from './components/IndividualMovie';
 
 class App extends Component {
   constructor() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import './Navbar.css';
-import HomeIcon from './assets/red-home-icon.png';
+import '../styles/Navbar.css';
+import HomeIcon from '../assets/red-home-icon.png';
 
 
 const Navbar = () => {
