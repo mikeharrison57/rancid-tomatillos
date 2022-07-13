@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard'
-import './MovieContainer.css';
+import '../styles/MovieContainer.css';
 
 const MovieContainer = (props) => {
   const { movies, handleClick } = props;
