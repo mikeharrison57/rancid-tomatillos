@@ -35,17 +35,14 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        {/* {this.state.error ?
-        <h1 className='Error'>{this.state.error}</h1> 
-        :
-        this.state.movieSelected ?
-        <IndividualMovie movie={this.state.individualMovie} />
-        : */}
+        {this.state.error ?
+        <h1 className='Error'>{this.state.error}</h1>
+        : 
         <Route exact path='/' render={ () => 
           <MovieContainer 
             movies={this.state.movies} 
             handleClick={this.handleClick}
-          />}/>
+          />}/> }
         <Route exact path="/:id" render={({ match }) => {
            return <IndividualMovie id={match.params.id} />
           }}

@@ -7,8 +7,8 @@ class IndividualMovie extends Component {
         super()
         this.state = {
             individualMovie: {},
-            // movieSelected: false,
-            id: props.id
+            id: props.id,
+            error: ''
         }
     }
 
@@ -38,6 +38,10 @@ class IndividualMovie extends Component {
         const splitGenres = genres && genres.join(", ");
 
         return (
+            <>
+            {this.state.error ?
+                <h1 className='Error'>{this.state.error}</h1>
+                : 
             <div className='IndividualMovie'>
                 <div className='BackgroundImage'>
                     <img src={backdrop_path}></img>
@@ -55,7 +59,8 @@ class IndividualMovie extends Component {
                         <p className='Tagline'>Tagline: {tagline}</p>
                     </article>
                 </section>
-            </div>
+            </div> }
+            </>
             )
         }
     }
