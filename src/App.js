@@ -11,9 +11,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      // movieSelected: false,
       error: ''
-      // individualMovie: {}
     }
   }
 
@@ -25,13 +23,13 @@ class App extends Component {
     })
   }
 
-  handleClick = (id) => {
-    fetchIndvidualMovie(id)
-      .then(data => this.setState({movieSelected: true,  individualMovie:data.movie}))
-      .catch(error => {
-        this.setState({error: error.message})
-    })
-  }
+  // handleClick = (id) => {
+  //   fetchIndvidualMovie(id)
+  //     .then(data => this.setState({movieSelected: true,  individualMovie:data.movie}))
+  //     .catch(error => {
+  //       this.setState({error: error.message})
+  //   })
+  // }
 
   render() {
     return (

@@ -10,7 +10,7 @@ const MovieCard = (props) => {
         <img 
           src={props.moviePoster} 
           alt='moviePoster'
-          onClick={() => handleClick(id)}
+          // onClick={() => handleClick(id)}
         />
         {/* <h3>{props.title}</h3> */}
       </div>
