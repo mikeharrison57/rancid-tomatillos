@@ -11,9 +11,9 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      movieSelected: false,
-      error: '',
-      individualMovie: {}
+      // movieSelected: false,
+      error: ''
+      // individualMovie: {}
     }
   }
 
