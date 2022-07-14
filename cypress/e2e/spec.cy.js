@@ -23,13 +23,18 @@ describe('main page', () => {
     cy.get('.Genres').contains('Action')
   })
 
-  it('should not display any other movies details when an individual movie is displayed', () => {
+  it('should not display any other movies details when an individual movie is displayed, (sad path)', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919,', {fixture: 'individual1'})
     cy.get('.MovieContainer').find('.MovieCard').first().click().wait(1000)
     cy.get('.Title').should('not.contain', 'Mulan')
     cy.get('.Runtime').should('not.contain', '115')
   })
-  //it(should have a way to return to the main view of all movies)
+  
+  it('should have a way to return to the main view of all movies', () => {
+    cy.visit('http://localhost:3000/337401').wait(1000)
+    cy.get('.HomeButton').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
   //it(should update the url to reflect a movies unique id when a user clicks on a movie)
   //it(should be able to navigate using the forward and back arrows)
 
