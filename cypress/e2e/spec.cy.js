@@ -33,11 +33,19 @@ describe('main page', () => {
   })
   
   it('should update the url to reflect a movies unique id when a user clicks on a movie', () => {
-    cy.visit('http://localhost:3000/').wait(1000)
+    cy.visit('http://localhost:3000/')
     cy.get('.MovieContainer').find('.MovieCard').last().click().wait(1000)
     cy.url().should('eq', 'http://localhost:3000/726739')
   })
-  //it(should be able to navigate using the forward and back arrows)
+
+  it('should be able to navigate using the forward and back arrows', () => {
+    cy.visit('http://localhost:3000/718444').wait(1000)
+    cy.go('back')
+    cy.get('.MovieContainer').find('.MovieCard').should('have.length', 6)
+    cy.go('forward').wait(1000)
+    cy.get('.Title').should('contain', 'Rogue')
+    cy.get('.Genres').should('contain', 'Action')
+  })
 
   it('should return an error message if a network request fails', () => {
     cy.visit('http://localhost:3000/')
