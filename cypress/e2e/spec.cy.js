@@ -8,10 +8,6 @@ describe('main page', () => {
     cy.get('h1').first().should('have.text', 'Rancid Tomatillos')
   })
 
-  // it('should have a button that routes to home', () => {
-  //   cy.get('.HomeButton').exist()
-  // })
-
   it('should be able to display all movies when a user visits the app', () => {
     cy.get('.MovieContainer').find('.MovieCard').should('have.length', 6)
   })
@@ -35,7 +31,12 @@ describe('main page', () => {
     cy.get('.HomeButton').click()
     cy.url().should('eq', 'http://localhost:3000/')
   })
-  //it(should update the url to reflect a movies unique id when a user clicks on a movie)
+  
+  it('should update the url to reflect a movies unique id when a user clicks on a movie', () => {
+    cy.visit('http://localhost:3000/').wait(1000)
+    cy.get('.MovieContainer').find('.MovieCard').last().click().wait(1000)
+    cy.url().should('eq', 'http://localhost:3000/726739')
+  })
   //it(should be able to navigate using the forward and back arrows)
 
   it('should return an error message if a network request fails', () => {
