@@ -9,12 +9,11 @@ const Navbar = () => {
     <header className='Navbar'>
       <h1>Rancid Tomatillos</h1>
       <NavLink to="/">
-      <img className='HomeButton'
-        src={ HomeIcon }
-        alt='home button'
-      />
+        <img className='HomeButton'
+          src={ HomeIcon }
+          alt='home button'
+        />
       </NavLink>
-        {/* // onClick={() => window.location.reload()} */}
     </header>
   )
 }
