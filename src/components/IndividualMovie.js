@@ -65,4 +65,4 @@ class IndividualMovie extends Component {
         }
     }
 
-export default IndividualMovie
+export default IndividualMovie;

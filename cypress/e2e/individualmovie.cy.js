@@ -52,6 +52,5 @@ describe('individual movie page', () => {
           })
           .get('.error').should('have.text', 'Internal Server Error')
       })
-    
-
+      
 })

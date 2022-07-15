@@ -1,19 +1,18 @@
 import React from "react";
 import '../styles/MovieCard.css'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MovieCard = (props) => {
-  const { id, handleClick } = props
+  const { id } = props
   return (
-    <NavLink to={`/${id}`}>
+    <Link to={`/${id}`}>
       <div className='movie-card'>
         <img 
           src={props.moviePoster} 
           alt='moviePoster'
-          // onClick={() => handleClick(id)}
         />
       </div>
-    </NavLink>
+    </Link>
   )
 }
 

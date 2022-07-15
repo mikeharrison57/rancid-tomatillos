@@ -1,11 +1,6 @@
 .movie-container {
   background-color: black;
-  /* display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit minMax(275px, 1fr)); */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* padding: 20px;
-  margin-bottom: 10px; */
 }

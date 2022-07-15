@@ -1,17 +1,17 @@
-import './App.css';
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import MovieContainer from './components/MovieContainer';
 import IndividualMovie from './components/IndividualMovie';
-import { fetchMovieData, fetchIndvidualMovie } from './apiCalls';
-import { Route, NavLink } from 'react-router-dom'
+import { fetchMovieData } from './apiCalls';
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      error: ''
+      error: '',
+      loading: 'LOADING...'
     }
   }
 
@@ -23,14 +23,6 @@ class App extends Component {
     })
   }
 
-  // handleClick = (id) => {
-  //   fetchIndvidualMovie(id)
-  //     .then(data => this.setState({movieSelected: true,  individualMovie:data.movie}))
-  //     .catch(error => {
-  //       this.setState({error: error.message})
-  //   })
-  // }
-
   render() {
     return (
       <div>
@@ -40,8 +32,7 @@ class App extends Component {
         : 
         <Route exact path='/' render={ () => 
           <MovieContainer 
-            movies={this.state.movies} 
-            handleClick={this.handleClick}
+            movies={this.state.movies}
           />}/> }
         <Route exact path="/:id" render={({ match }) => {
            return <IndividualMovie id={match.params.id} />
