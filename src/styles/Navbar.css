@@ -4,8 +4,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black ;
-    color: #d90429;
     font-size: 32px;
     padding-left: 20px;
     padding-right: 20px;
@@ -18,13 +16,15 @@
 }
 
 .home-button:hover {
-    /* opacity: .7; */
     cursor: pointer;
     transform: scale(1.2);
     transition: all .3s;
     filter: brightness(120%);
   }
 
-/* h1 {
-    font-family: 'Limelight';
-} */
+h1 {
+    /* font-family: 'Limelight'; */
+    background: -webkit-linear-gradient(orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
