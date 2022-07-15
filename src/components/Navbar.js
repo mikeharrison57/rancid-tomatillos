@@ -6,10 +6,10 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <header className='Navbar'>
+    <header className='nav-bar'>
       <h1>Rancid Tomatillos</h1>
       <NavLink to="/">
-        <img className='HomeButton'
+        <img className='home-button'
           src={ HomeIcon }
           alt='home button'
         />

@@ -6,13 +6,12 @@ const MovieCard = (props) => {
   const { id, handleClick } = props
   return (
     <NavLink to={`/${id}`}>
-      <div className='MovieCard'>
+      <div className='movie-card'>
         <img 
           src={props.moviePoster} 
           alt='moviePoster'
           // onClick={() => handleClick(id)}
         />
-        {/* <h3>{props.title}</h3> */}
       </div>
     </NavLink>
   )

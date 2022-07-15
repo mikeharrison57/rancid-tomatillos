@@ -2,7 +2,11 @@ img {
   padding: 10px;
 }
 
-.MovieCard:hover {
+.movie-card {
+  margin: 10px 10px 25px
+}
+
+.movie-card:hover {
   cursor: pointer;
   transform: scale(1.05);
   transition: all .3s;

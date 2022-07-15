@@ -36,7 +36,7 @@ class App extends Component {
       <div>
         <Navbar />
         {this.state.error ?
-        <h1 className='Error'>{this.state.error}</h1>
+        <h1 className='error'>{this.state.error}</h1>
         : 
         <Route exact path='/' render={ () => 
           <MovieContainer 
