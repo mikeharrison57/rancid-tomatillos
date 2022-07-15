@@ -1,9 +1,6 @@
 img {
   padding: 10px;
-}
-
-.movie-card {
-  margin: 10px 10px 25px
+  width: 350px;
 }
 
 .movie-card:hover {

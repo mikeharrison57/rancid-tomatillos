@@ -43,9 +43,9 @@ class IndividualMovie extends Component {
                 <h1 className='error'>{this.state.error}</h1>
                 : 
             <div className='individual-movie'>
-                <div className='background-image'>
+                <header className='background-image'>
                     <img className='backdrop-path' src={backdrop_path}></img>
-                </div>
+                </header>
                 <section>
                     <article className='primary-info'>
                         <p className='title'>{title}</p>

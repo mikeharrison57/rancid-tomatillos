@@ -18,9 +18,9 @@ const MovieContainer = (props) => {
     )
   })
   return (
-    <div className='movie-container'>
+    <article className='movie-container'>
       {movieCards}
-    </div>
+    </article>
   )
 };
 
