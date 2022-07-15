@@ -44,7 +44,7 @@ class IndividualMovie extends Component {
                 : 
             <div className='IndividualMovie'>
                 <div className='BackgroundImage'>
-                    <img src={backdrop_path}></img>
+                    <img className='backdrop-path' src={backdrop_path}></img>
                 </div>
                 <section>
                     <article className='PrimaryInfo'>
