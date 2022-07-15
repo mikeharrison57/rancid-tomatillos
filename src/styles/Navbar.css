@@ -1,30 +1,33 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Limelight&display=swap') */
-
-.Navbar {
+.nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black ;
-    color: #d90429;
-    font-size: 32px;
+    font-size: 30px;
     padding-left: 20px;
     padding-right: 20px;
     background: -webkit-linear-gradient(grey, black);
 }
 
-.HomeButton {
+.heading-container {
+    display: flex;
+    align-items: center;
+}
+
+.home-button,
+.movie-reel {
     height: 75px;
     width: 75px;
 }
 
-.HomeButton:hover {
-    /* opacity: .7; */
+.home-button:hover {
     cursor: pointer;
     transform: scale(1.2);
     transition: all .3s;
     filter: brightness(120%);
   }
 
-/* h1 {
-    font-family: 'Limelight';
-} */
+h1 {
+    background: -webkit-linear-gradient(orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

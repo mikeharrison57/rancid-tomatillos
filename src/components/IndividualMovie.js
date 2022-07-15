@@ -40,29 +40,29 @@ class IndividualMovie extends Component {
         return (
             <>
             {this.state.error ?
-                <h1 className='Error'>{this.state.error}</h1>
+                <h1 className='error'>{this.state.error}</h1>
                 : 
-            <div className='IndividualMovie'>
-                <div className='BackgroundImage'>
+            <section className='individual-movie'>
+                <header className='background-image'>
                     <img className='backdrop-path' src={backdrop_path}></img>
-                </div>
-                <section>
-                    <article className='PrimaryInfo'>
-                        <p className='Title'>{title}</p>
-                        <p className='ReleaseDate'>Release Date: {splitDate}</p>
-                        <p className='Overview'>Overview: {overview}</p>
+                </header>
+                <section className='movie-info'>
+                    <article className='primary-info'>
+                        <p className='title'>{title}</p>
+                        <p className='release-date'>{splitDate}</p>
+                        <p className='overview'>{overview}</p>
                     </article>
-                    <article className='SecondaryInfo'>
-                        <p className='Rating'>Rating: {roundedRating}</p>
-                        <p className='Genres'>Genres: {splitGenres}</p>
-                        <p className='Runtime'>Runtime: {runtime} Mins</p>
-                        <p className='Tagline'>Tagline: {tagline}</p>
+                    <article className='secondary-info'>
+                        <p className='rating'>{roundedRating} ⭐</p>
+                        <p className='genres'>{splitGenres}</p>
+                        <p className='runtime'>{runtime} Mins</p>
+                        <p className='tagline'>'{tagline}'</p>
                     </article>
                 </section>
-            </div> }
+            </section> }
             </>
             )
         }
     }
 
-export default IndividualMovie
+export default IndividualMovie;

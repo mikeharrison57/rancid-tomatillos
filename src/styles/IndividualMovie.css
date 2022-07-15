@@ -1,10 +1,4 @@
-img {
-    height: 500px;
-    width: 100%;
-    padding: 0;
-}
-
-section {
+.movie-info {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
@@ -12,11 +6,57 @@ section {
     justify-content: space-around;
     background: -webkit-linear-gradient(black, grey);
     color: rgba(225, 225, 225, .9);
-    margin: 0;
-    padding: 0;
-    font-size: 18px;;
+    height: 50%;
+    font-size: 20px;;
 }
 
-.PrimaryInfo {
+.backdrop-path { 
+    width: 100%;
+    max-width: 1100px;
+    max-height: 650px;
+}
+
+.background-image {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.primary-info {
     width: 60%;
+}
+
+.title::before {
+    content: 'Title: ';
+    font-weight: bold;
+}
+
+.release-date::before {
+    content: 'Release Date: ';
+    font-weight: bold;
+}
+
+.overview::before {
+    content: 'Overview: ';
+    font-weight: bold;
+}
+
+.rating::before {
+    content: 'Rating: ';
+    font-weight: bold;
+}
+
+.genres::before {
+    content: 'Genres: ';
+    font-weight: bold;
+}
+
+.runtime::before {
+    content: 'Runtime: ';
+    font-weight: bold;
+}
+
+.tagline::before {
+    content: 'Tagline: ';
+    font-weight: bold;
 }
