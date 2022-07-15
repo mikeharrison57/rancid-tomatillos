@@ -42,24 +42,24 @@ class IndividualMovie extends Component {
             {this.state.error ?
                 <h1 className='error'>{this.state.error}</h1>
                 : 
-            <div className='individual-movie'>
+            <section className='individual-movie'>
                 <header className='background-image'>
                     <img className='backdrop-path' src={backdrop_path}></img>
                 </header>
-                <section>
+                <section className='movie-info'>
                     <article className='primary-info'>
                         <p className='title'>{title}</p>
-                        <p className='release-date'>Release Date: {splitDate}</p>
-                        <p className='overview'>Overview: {overview}</p>
+                        <p className='release-date'>{splitDate}</p>
+                        <p className='overview'>{overview}</p>
                     </article>
                     <article className='secondary-info'>
-                        <p className='rating'>Rating: {roundedRating}</p>
-                        <p className='genres'>Genres: {splitGenres}</p>
-                        <p className='runtime'>Runtime: {runtime} Mins</p>
-                        <p className='tagline'>Tagline: {tagline}</p>
+                        <p className='rating'>{roundedRating} ⭐</p>
+                        <p className='genres'>{splitGenres}</p>
+                        <p className='runtime'>{runtime} Mins</p>
+                        <p className='tagline'>'{tagline}'</p>
                     </article>
                 </section>
-            </div> }
+            </section> }
             </>
             )
         }
