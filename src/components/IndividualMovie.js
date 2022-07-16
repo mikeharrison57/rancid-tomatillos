@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/IndividualMovie.css'
-import { fetchIndvidualMovie } from '../apiCalls';
+import { fetchIndvidualMovie, fetchMovieTrailer } from '../apiCalls';
+
 
 class IndividualMovie extends Component {
     constructor(props) {
@@ -8,7 +9,10 @@ class IndividualMovie extends Component {
         this.state = {
             individualMovie: {},
             id: props.id,
+            key: '',
             error: ''
+
+
         }
     }
 
@@ -19,6 +23,16 @@ class IndividualMovie extends Component {
             this.setState({error: error.message})
       })
     }
+
+    playTrailer = () => {
+        fetchMovieTrailer(this.state.id)
+        .then((data) => {
+            if (data.videos.length) {
+              return data.videos.find((video) => video.type === "Trailer");
+            }
+        })
+    }   
+
 
     render() {
         const { 
@@ -45,6 +59,7 @@ class IndividualMovie extends Component {
             <section className='individual-movie'>
                 <header className='background-image'>
                     <img className='backdrop-path' src={backdrop_path}></img>
+                    <button onClick={() => this.playTrailer()}>Play Trailer</button>
                 </header>
                 <section className='movie-info'>
                     <article className='primary-info'>
