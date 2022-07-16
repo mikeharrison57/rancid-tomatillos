@@ -29,7 +29,6 @@ class IndividualMovie extends Component {
     playTrailer = () => {
         fetchMovieTrailer(this.state.id)
         .then((data) => {
-        //    console.log(data);
             if (data.videos.length) {
               return data.videos.find((video) => video.type === "Trailer");
             }
@@ -38,6 +37,9 @@ class IndividualMovie extends Component {
             if (trailer.key) {
                 this.setState({ trailerKey: trailer.key });
             }
+        })
+        .catch((error) => {
+            this.setState({error: error.message});
         })
     }
     
@@ -70,11 +72,10 @@ class IndividualMovie extends Component {
                     {this.state.trailerKey.length ? <Trailer trailerKey={this.state.trailerKey}/> : <img className='backdrop-path' src={backdrop_path}></img>}
                 </header>
                 <div className='button-container'>
-                    <img onClick={() => this.playTrailer()} className='play-button' 
-                    src={ PlayButton }
-                    alt='play movie'
-                    />
-                    {/* <button onClick={() => this.playTrailer()}>Play Trailer</button> */}
+                    {this.state.trailerKey.length ? <p></p> : <img onClick={() => this.playTrailer()} className='play-button' 
+                        src={ PlayButton }
+                        alt='play movie'
+                    />}
                 </div>
                 <section className='movie-info'>
                     <article className='primary-info'>

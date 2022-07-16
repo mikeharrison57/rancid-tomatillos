@@ -78,3 +78,7 @@
     content: 'Tagline: ';
     font-weight: bold;
 }
+
+hidden {
+    display: none;
+}
