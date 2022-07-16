@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/IndividualMovie.css'
 import { fetchIndvidualMovie, fetchMovieTrailer } from '../apiCalls';
 import Trailer from './Trailer';
+import PlayButton from '../assets/play-trailer-button.png';
 
 
 class IndividualMovie extends Component {
@@ -67,8 +68,14 @@ class IndividualMovie extends Component {
             <section className='individual-movie'>
                 <header className='background-image'>
                     {this.state.trailerKey.length ? <Trailer trailerKey={this.state.trailerKey}/> : <img className='backdrop-path' src={backdrop_path}></img>}
-                    <button onClick={() => this.playTrailer()}>Play Trailer</button>
                 </header>
+                <div className='button-container'>
+                    <img onClick={() => this.playTrailer()} className='play-button' 
+                    src={ PlayButton }
+                    alt='play movie'
+                    />
+                    {/* <button onClick={() => this.playTrailer()}>Play Trailer</button> */}
+                </div>
                 <section className='movie-info'>
                     <article className='primary-info'>
                         <p className='title'>{title}</p>
