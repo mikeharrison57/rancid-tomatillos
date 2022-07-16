@@ -56,7 +56,7 @@ class IndividualMovie extends Component {
                         <p className='rating'>{roundedRating} ⭐</p>
                         <p className='genres'>{splitGenres}</p>
                         <p className='runtime'>{runtime} Mins</p>
-                        <p className='tagline'>'{tagline}'</p>
+                        {!tagline ? <p></p> : <p className='tagline'>'{tagline}'</p>}
                     </article>
                 </section>
             </section> }
