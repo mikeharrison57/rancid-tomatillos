@@ -10,7 +10,7 @@ class IndividualMovie extends Component {
         this.state = {
             individualMovie: {},
             id: props.id,
-            key: '',
+            trailerKey: '',
             error: ''
 
 
@@ -28,21 +28,21 @@ class IndividualMovie extends Component {
     playTrailer = () => {
         fetchMovieTrailer(this.state.id)
         .then((data) => {
-           console.log(data);
+        //    console.log(data);
             if (data.videos.length) {
               return data.videos.find((video) => video.type === "Trailer");
             }
         })
         .then((trailer) => {
             if (trailer.key) {
-                this.setState({ key: trailer.key });
-                console.log(this.state.key)
+                this.setState({ trailerKey: trailer.key });
             }
         })
     }
-
-
+    
+    
     render() {
+        console.log(this.state.trailerKey)
         const { 
             title, 
             backdrop_path, 
@@ -66,7 +66,7 @@ class IndividualMovie extends Component {
                 : 
             <section className='individual-movie'>
                 <header className='background-image'>
-                    {this.state.key !== '' ? <Trailer /> : <img className='backdrop-path' src={backdrop_path}></img>}
+                    {this.state.trailerKey.length ? <Trailer trailerKey={this.state.trailerKey}/> : <img className='backdrop-path' src={backdrop_path}></img>}
                     <button onClick={() => this.playTrailer()}>Play Trailer</button>
                 </header>
                 <section className='movie-info'>

@@ -1,21 +1,20 @@
 import React from 'react';
 import '../styles/Trailer.css';
 
-const Trailer = () => {
+const Trailer = ({ trailerKey }) => {
 
-    return(
-        this.props.key && (
+    return( 
             <iframe
               className="trailer"
-              width="840"
-              height="691.74"
-              src={`https://www.youtube.com/embed/${this.props.key}`}
+              width="1100"
+              height="600"
+              src={`https://www.youtube.com/embed/${trailerKey}`}
               title="YouTube video player"
               frameBorder="0"
-            //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
+              //allow="picture-in-picture"
+              //allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
     )
-    )
-}
+}   
 
 export default Trailer;
