@@ -13,7 +13,7 @@ const MovieContainer = (props) => {
         title={movie.title} 
         averageRating={movie.average_rating}
         releaseDate={movie.release_date}
-        handleClick={handleClick}
+        // handleClick={handleClick}
       />
     )
   })

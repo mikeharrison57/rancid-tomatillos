@@ -22,6 +22,24 @@
     background-color: black;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.play-button {
+    height: 50px;
+    width: 50px;
+}
+
+.play-button:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+    transition: all .5s;
+    /* filter: brightness(200%); */
+  }
+
 .primary-info {
     width: 60%;
 }
@@ -59,4 +77,8 @@
 .tagline::before {
     content: 'Tagline: ';
     font-weight: bold;
+}
+
+hidden {
+    display: none;
 }

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import '../styles/IndividualMovie.css'
-import { fetchIndvidualMovie } from '../apiCalls';
+import { fetchIndvidualMovie, fetchMovieTrailer } from '../apiCalls';
+import Trailer from './Trailer';
+import PlayButton from '../assets/play-trailer-button.png';
+
 
 class IndividualMovie extends Component {
     constructor(props) {
@@ -8,7 +11,10 @@ class IndividualMovie extends Component {
         this.state = {
             individualMovie: {},
             id: props.id,
+            trailerKey: '',
             error: ''
+
+
         }
     }
 
@@ -20,7 +26,26 @@ class IndividualMovie extends Component {
       })
     }
 
+    playTrailer = () => {
+        fetchMovieTrailer(this.state.id)
+        .then((data) => {
+            if (data.videos.length) {
+              return data.videos.find((video) => video.type === "Trailer");
+            }
+        })
+        .then((trailer) => {
+            if (trailer.key) {
+                this.setState({ trailerKey: trailer.key });
+            }
+        })
+        .catch((error) => {
+            this.setState({error: error.message});
+        })
+    }
+    
+    
     render() {
+        console.log(this.state.trailerKey)
         const { 
             title, 
             backdrop_path, 
@@ -44,8 +69,14 @@ class IndividualMovie extends Component {
                 : 
             <section className='individual-movie'>
                 <header className='background-image'>
-                    <img className='backdrop-path' src={backdrop_path}></img>
+                    {this.state.trailerKey.length ? <Trailer trailerKey={this.state.trailerKey}/> : <img className='backdrop-path' src={backdrop_path}></img>}
                 </header>
+                <div className='button-container'>
+                    {this.state.trailerKey.length ? <p></p> : <img onClick={() => this.playTrailer()} className='play-button' 
+                        src={ PlayButton }
+                        alt='play movie'
+                    />}
+                </div>
                 <section className='movie-info'>
                     <article className='primary-info'>
                         <p className='title'>{title}</p>

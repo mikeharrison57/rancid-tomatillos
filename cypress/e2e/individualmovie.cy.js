@@ -31,6 +31,13 @@ describe('individual movie page', () => {
         cy.url().should('eq', 'http://localhost:3000/726739')
       })
 
+      it('should be able to display a single movie trailer when a user clicks on a specific movie', () => {
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/726739,', {fixture: 'individualmovie2'})
+        cy.get('.movie-container').find('.movie-card').last().click().wait(1000)
+        cy.get('.play-button').click()
+        cy.get('.trailer').should('have.attr', 'src').should('include', `https://www.youtube.com/embed/ct5mQYE3Xk4?autoplay=1`)
+      })
+
       it('should return an error message if a network request fails', () => {
         cy.visit('http://localhost:3000/694919')
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
