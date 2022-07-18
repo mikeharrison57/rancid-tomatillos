@@ -24,7 +24,11 @@
 
 ## Illustrations
 
-![DemoScroll](https://media.giphy.com/media/71SsWpLfAFuQt6FaxX/giphy.gif)
+### Main page view and selecting an individual movie:
+
+![DemoScroll](https://media.giphy.com/media/CxI3EVX5gBTEczfN1i/giphy.gif)
+
+### Playing the trailer on an individual movie page:
 
 ![DemoPlay](https://media.giphy.com/media/QUukpoTX2BvQYVQn71/giphy.gif)
 
