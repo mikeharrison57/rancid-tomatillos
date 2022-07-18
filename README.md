@@ -24,7 +24,7 @@
 
 ## Illustrations
 
-![DemoScroll](https://media.giphy.com/media/sv3SovgHmg4UH3iEwR/giphy.gif)
+![DemoScroll](https://media.giphy.com/media/71SsWpLfAFuQt6FaxX/giphy.gif)
 
 ![DemoPlay](https://media.giphy.com/media/QUukpoTX2BvQYVQn71/giphy.gif)
 
