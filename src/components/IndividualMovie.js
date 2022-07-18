@@ -79,15 +79,15 @@ class IndividualMovie extends Component {
                 </div>
                 <section className='movie-info'>
                     <article className='primary-info'>
-                        <p className='title'>{title}</p>
-                        <p className='release-date'>{splitDate}</p>
-                        <p className='overview'>{overview}</p>
+                        {title && <p className='title'>{title}</p>}
+                        {splitDate && <p className='release-date'>{splitDate}</p>}
+                        {overview && <p className='overview'>{overview}</p>}
                     </article>
                     <article className='secondary-info'>
-                        <p className='rating'>{roundedRating} ⭐</p>
-                        <p className='genres'>{splitGenres}</p>
-                        <p className='runtime'>{runtime} Mins</p>
-                        {!tagline ? <p></p> : <p className='tagline'>'{tagline}'</p>}
+                        {roundedRating && <p className='rating'>{roundedRating} ⭐</p>}
+                        {splitGenres && <p className='genres'>{splitGenres}</p>}
+                        {runtime === 0 ? <p></p> : <p className='runtime'>{runtime} Mins</p>}
+                        {tagline && <p className='tagline'>'{tagline}'</p>}
                     </article>
                 </section>
             </section> }
