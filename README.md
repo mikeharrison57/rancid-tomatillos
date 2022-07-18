@@ -24,6 +24,10 @@
 
 ## Illustrations
 
+![DemoScroll](![Demo](https://media.giphy.com/media/sv3SovgHmg4UH3iEwR/giphy.gif))
+
+![DemoPlay](![Demo](https://media.giphy.com/media/QUukpoTX2BvQYVQn71/giphy.gif))
+
 ## Application and Component Wireframes
 
 ### Main Page
