@@ -12,7 +12,7 @@ const Navbar = () => {
         src={ MovieReel }
         alt='movie reel'
         />
-        <h1>Rancid Tomatillos</h1>
+        <h1 className='app-heading'>Rancid Tomatillos</h1>
     </article>
       <Link to="/">
         <img className='home-button'

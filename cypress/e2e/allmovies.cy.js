@@ -13,16 +13,16 @@ describe('all movies page', () => {
   })
 
   it('should have a way to return to the main view of all movies after clicking on an individual movie', () => {
-    cy.visit('http://localhost:3000/337401').wait(1000)
+    cy.visit('http://localhost:3000/337401')
     cy.get('.home-button').click()
     cy.url().should('eq', 'http://localhost:3000/')
   })
 
   it('should be able to navigate using the forward and back arrows', () => {
-    cy.visit('http://localhost:3000/718444').wait(1000)
+    cy.visit('http://localhost:3000/718444')
     cy.go('back')
     cy.get('.movie-container').find('.movie-card').should('have.length', 6)
-    cy.go('forward').wait(1000)
+    cy.go('forward')
     cy.get('.title').should('contain', 'Rogue')
     cy.get('.genres').should('contain', 'Action')
   })

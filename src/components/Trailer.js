@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/Trailer.css';
 
-const Trailer = ({ trailerKey }) => {
-
+const Trailer = (props) => {
+    const {trailerKey} = props
     return( 
         <iframe
             className="trailer"
