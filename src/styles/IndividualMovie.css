@@ -7,7 +7,8 @@
     background: -webkit-linear-gradient(black, grey);
     color: rgba(225, 225, 225, .9);
     height: 50%;
-    font-size: 20px;;
+    font-size: 20px;
+    text-align: left;
 }
 
 .backdrop-path { 
