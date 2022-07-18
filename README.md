@@ -4,16 +4,16 @@
 
 - [Table of Contents](#table-of-contents)
 - [Abstract](#abstract)
-- [Deployed Link](#deployed-link])
+- [Deployed Link](#deployed-link)
 - [Illustrations](#illustrations)
-- [Technologies Used](#technologies-used)
+- [Technology Stack](#technology-stack)
 - [Application & Component Wireframes](#application-and-component-wireframes)
 - [Context and Features](#context-and-features)
 - [User Stories](#user-stories)
 - [Lessons Learned](#lessons-learned)
 - [Future Features](#future-features)
 - [Application Set-Up](#application-set-up)
-- [Contributor LinkedIns and GitHubs](#contributor-linkedin-and-github)
+- [Contributor Information](#contributor-information)
 - [Project Specs](#project-specs)
 
 ## Abstract
@@ -21,6 +21,8 @@
 - Rancid Tomatillos is an application built using the React.js framework. It takes inspiration from popular review-aggregation website _Rotten Tomatoes_ as well as many different streaming services including but not limited to _Netflix_ and _HBO Max_. The goal of this application is to allow users to look at information about 40 different films that they might be interested in watching.  
 
 ## Deployed Link
+
+- Vist our application webpage [here](https://damp-hollows-03111.herokuapp.com/)  
 
 ## Illustrations
 
@@ -112,12 +114,14 @@ Some future features we’d like to add to this application are:
 
 6. When finished with the application, type `Control + C` to stop running the application. 
 
-## Contributor LinkedIn’s
+## Contributor Information
+
+### Contributor LinkedIn’s
 
 - [Michael Harrison: LinkedIn](https://www.linkedin.com/in/michael-harrison-b476a498/)   
 - [Nathan Hodnett: LinkedIn](https://www.linkedin.com/in/nathan-h-200a4710/)    
 
-## Contributor GitHubs’s
+### Contributor GitHubs’s
 
 - [Michael Harrison: GitHub](https://github.com/mikeharrison57) 
 - [Nathan Hodnett: GitHub](https://github.com/nhodnett)     
