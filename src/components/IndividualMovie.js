@@ -43,9 +43,7 @@ class IndividualMovie extends Component {
         })
     }
     
-    
     render() {
-        console.log(this.state.trailerKey)
         const { 
             title, 
             backdrop_path, 

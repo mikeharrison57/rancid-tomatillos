@@ -10,8 +10,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
-      error: '',
-      loading: 'LOADING...'
+      error: ''
     }
   }
 
