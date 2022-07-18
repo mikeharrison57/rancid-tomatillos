@@ -5,7 +5,7 @@ describe('individual movie page', () => {
     })
 
     it('should still display a title of Rancid Tomatillos', () => {
-        cy.visit('http://localhost:3000/337401').wait(1000)
+        cy.visit('http://localhost:3000/337401')
         cy.get('h1').first().should('have.text', 'Rancid Tomatillos')
       })
 
@@ -20,20 +20,20 @@ describe('individual movie page', () => {
 
       it('should not display any other movies details when an individual movie is displayed, (sad path)', () => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919,', {fixture: 'individualmovie1'})
-        cy.get('.movie-container').find('.movie-card').first().click().wait(1000)
+        cy.get('.movie-container').find('.movie-card').first().click()
         cy.get('.title').should('not.contain', 'Mulan')
         cy.get('.runtime').should('not.contain', '115')
       })
 
       it('should update the url to reflect a movies unique id when a user clicks on a movie', () => {
         cy.visit('http://localhost:3000/')
-        cy.get('.movie-container').find('.movie-card').last().click().wait(1000)
+        cy.get('.movie-container').find('.movie-card').last().click()
         cy.url().should('eq', 'http://localhost:3000/726739')
       })
 
       it('should be able to display a single movie trailer when a user clicks on a specific movie', () => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/726739,', {fixture: 'individualmovie2'})
-        cy.get('.movie-container').find('.movie-card').last().click().wait(1000)
+        cy.get('.movie-container').find('.movie-card').last().click()
         cy.get('.play-button').click()
         cy.get('.trailer').should('have.attr', 'src').should('include', `https://www.youtube.com/embed/ct5mQYE3Xk4?autoplay=1`)
       })
