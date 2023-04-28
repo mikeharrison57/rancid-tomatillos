@@ -4,7 +4,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [Abstract](#abstract)
-- [Deployed Link](#deployed-link])
+- [Deployed Link](#deployed-link)
 - [Illustrations](#illustrations)
 - [Technologies Used](#technologies-used)
 - [Application & Component Wireframes](#application-and-component-wireframes)
@@ -21,6 +21,8 @@
 - Rancid Tomatillos is an application built using the React.js framework. It takes inspiration from popular review-aggregation website _Rotten Tomatoes_ as well as many different streaming services including but not limited to _Netflix_ and _HBO Max_. The goal of this application is to allow users to look at information about 40 different films that they might be interested in watching.  
 
 ## Deployed Link
+
+[Deployed App](https://rancid-tomatillos-1.vercel.app)
 
 ## Illustrations
 
